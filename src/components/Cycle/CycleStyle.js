@@ -39,10 +39,10 @@ export const Container = styled.div`
 
   @keyframes fronttyre {
     0% {
-      transform: translate(50%) rotate(100deg);
+      transform: translate(50%) rotate(30deg);
     }
     50% {
-      transform: translate(1px);
+      transform: translate(0);
     }
   }
 
@@ -57,17 +57,15 @@ export const Container = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: transparent;
-  border: none;
-  border-radius: 5px;
+  font-size: 18px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-
+  background-color: transparent;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+border: transparent;
   &:hover {
-    background-color: red;
+    background-color: darkgray;
+    transform: scale(1.05);
   }
 `;
 
