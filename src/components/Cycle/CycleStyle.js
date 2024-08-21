@@ -30,10 +30,10 @@ export const Container = styled.div`
     width: 655px;
   }
   &.animate .Cyclefront {
-    animation: fronttyre 3s infinite ease-in-out;
+    animation: fronttyre 1s infinite ease-in-out;
   }
   &.animate .Cycleback {
-    animation: backtyre 3s infinite ease-out;
+    animation: backtyre 1s infinite ease-out;
   }
 
   @keyframes fronttyre {

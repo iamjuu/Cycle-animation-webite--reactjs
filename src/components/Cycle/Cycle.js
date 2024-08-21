@@ -26,39 +26,12 @@ const Cycle = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
 
-  const handleLeftClick = () => {
-    let currentIndexValue = currentIndex - 1;
-    if (currentIndexValue < 0) {
-      currentIndexValue = 0;
-    }
-    setTimeout(() => {
-      setCurrentIndex(currentIndexValue);
-    }, 1800);
-
-    setAnimate(true);
-    setTimeout(() => {
-      setAnimate(false);
-    }, 2000);
-  };
-
-  const handleRightClick = () => {
-    let currentIndexValue = currentIndex + 1;
-    if (currentIndexValue > cycleData.length - 1) {
-      currentIndexValue = cycleData.length - 1;
-    }
-    setTimeout(() => {
-      setCurrentIndex(currentIndexValue);
-    }, 1800);
-
-    setAnimate(true);
-    setTimeout(() => {
-      setAnimate(false);
-    }, 2000);
-  };
-
   const handleCycleChange = (index) => {
     setCurrentIndex(index);
     setAnimate(true)
+    setTimeout(()=>{
+      setAnimate(false)
+    },1000)
   };
 
   const currentCycle = cycleData[currentIndex];
@@ -73,12 +46,7 @@ const Cycle = () => {
         <img className='CycleMain' src={currentCycle.image} alt="Cycle" />
 
         <ButtonContainer>
-          <StyledButton onClick={handleLeftClick}>
-            <img src={Leftimage} alt="Left Arrow" />
-          </StyledButton>
-          <StyledButton onClick={handleRightClick}>
-            <img src={Righttbtn} alt="Right Arrow" />
-          </StyledButton>
+         
 
           <Colordiv Bg='green' func={() => handleCycleChange(0)} />
           <Colordiv Bg='red' func={() => handleCycleChange(1)} />
