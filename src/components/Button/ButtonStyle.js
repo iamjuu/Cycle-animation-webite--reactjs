@@ -1,14 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Btn = styled.div`
+
+ export const Div = styled.div`
+  background-color: ${(props) => props.bgColor || 'gray'};
+  color:transparent;
+  /* padding: 20px; */
   width: 30px;
   height: 30px;
-  background-color: #4CAF50;
+  margin: 10px 0;
   border-radius: 50%;
-  /* border: 2px solid gray; */
-  .button{
-    border: none;
-    border-radius: 50%;
-    background-color: transparent;
-  }
 `;

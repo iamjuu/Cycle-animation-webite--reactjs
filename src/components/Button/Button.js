@@ -1,13 +1,9 @@
 import React from 'react';
+import {Div} from '../Button/ButtonStyle'
 
-import {Btn} from '../Button/ButtonStyle'
 
-const Button = ({color}) => {
-  return (
-    <Btn >
- 
-    </Btn>
-  );
-}
+const Colordiv = ({ Bg,func }) => {
+  return <Div  onClick={func} bgColor={Bg}> </Div>;
+};
 
-export default Button;
+export default Colordiv;

@@ -5,10 +5,9 @@ export const Container = styled.div`
   top: 150px;
   color: white;
   width: 900px;
-  height: 500px;
+  height: 600px;
   border-radius: 20px;
-  background-color: gray;
-  opacity: 60%;
+  opacity: 90%;
   img {
     width: 40px;
     color: white;
@@ -39,7 +38,7 @@ export const Container = styled.div`
 
   @keyframes fronttyre {
     0% {
-      transform: translate(50%) rotate(30deg);
+      transform: translate(50%) rotate(60deg);
     }
     50% {
       transform: translate(0);
@@ -54,7 +53,31 @@ export const Container = styled.div`
       transform: translate(0);
     }
   }
-`;
+  @media (max-width: 900px) {  
+    width: 95%;
+    .CycleMain {  
+      width: 95%;
+    }  
+    .Cyclefront,  
+    .Cycleback {  
+      width: 95%; 
+    }  
+  }  
+
+  @media (max-width: 600px) {  
+    top: 100px;
+    .CycleMain {  
+      font-size: 14px;
+    }  
+    img {  
+      width: 30px; 
+    }  
+  } 
+    
+
+  
+    
+    `;
 
 export const StyledButton = styled.button`
   font-size: 18px;

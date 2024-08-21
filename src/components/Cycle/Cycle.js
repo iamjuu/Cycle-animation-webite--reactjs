@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Container, ButtonContainer, StyledButton } from '../Cycle/CycleStyle';
 import Leftimage from '../../Images/left.png';
@@ -11,11 +10,11 @@ import CycleImg5 from '../../Images/cycle body(5).png';
 import CycleImg6 from '../../Images/cycle body.png';
 import FrontTyre from '../../Images/fronttyre.png';
 import BackTyre from '../../Images/backtyre.png';
-
-import ColorBtn from '../Button/Button'
+import Colordiv from '../Button/Button';
+import Nike from '../Text/Text';
 
 const Cycle = () => {
-  const [cycleData, setCycleData] = useState([
+  const [cycleData] = useState([
     { id: 1, image: CycleImg1 },
     { id: 2, image: CycleImg2 },
     { id: 3, image: CycleImg3 },
@@ -24,48 +23,42 @@ const Cycle = () => {
     { id: 6, image: CycleImg6 },
   ]);
 
-  const [tyre, settyre] = useState([
-    { id: 1, image: BackTyre },
-    { id: 2, image: FrontTyre },
-  ]);
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
 
   const handleLeftClick = () => {
-    console.log('left btn');
-
-    let currentIndexValue = currentIndex;
-    currentIndexValue = currentIndexValue - 1;
+    let currentIndexValue = currentIndex - 1;
     if (currentIndexValue < 0) {
       currentIndexValue = 0;
     }
-    
-    setCurrentIndex(currentIndexValue);
-
+    setTimeout(() => {
+      setCurrentIndex(currentIndexValue);
+    }, 1800);
 
     setAnimate(true);
-
     setTimeout(() => {
       setAnimate(false);
     }, 2000);
   };
 
   const handleRightClick = () => {
-    console.log('right btn');
-
-    let currentIndexValue = currentIndex;
-    currentIndexValue = currentIndexValue + 1;
+    let currentIndexValue = currentIndex + 1;
     if (currentIndexValue > cycleData.length - 1) {
       currentIndexValue = cycleData.length - 1;
     }
-    setCurrentIndex(currentIndexValue);
+    setTimeout(() => {
+      setCurrentIndex(currentIndexValue);
+    }, 1800);
 
     setAnimate(true);
-
     setTimeout(() => {
       setAnimate(false);
-    }, 2000); 
+    }, 2000);
+  };
+
+  const handleCycleChange = (index) => {
+    setCurrentIndex(index);
+    setAnimate(true)
   };
 
   const currentCycle = cycleData[currentIndex];
@@ -74,10 +67,11 @@ const Cycle = () => {
     <>
       <Container className={animate ? 'animate' : ''}>
         <div className='Cycleback-main'>
-          <img className='Cycleback' src={tyre[0].image} alt='cycleback tyre' />
-          <img className='Cyclefront' src={tyre[1].image} alt='cycle front' />
+          <img className='Cycleback' src={BackTyre} alt='cycleback tyre' />
+          <img className='Cyclefront' src={FrontTyre} alt='cycle front' />
         </div>
         <img className='CycleMain' src={currentCycle.image} alt="Cycle" />
+
         <ButtonContainer>
           <StyledButton onClick={handleLeftClick}>
             <img src={Leftimage} alt="Left Arrow" />
@@ -85,15 +79,15 @@ const Cycle = () => {
           <StyledButton onClick={handleRightClick}>
             <img src={Righttbtn} alt="Right Arrow" />
           </StyledButton>
-          {/* ***************************** */}
-          <ColorBtn/>
-          <ColorBtn color='red'/>
-          <ColorBtn  color= 'blue' />
-          <ColorBtn  color='sky blue'  />
-          <ColorBtn  />
 
-          
+          <Colordiv Bg='green' func={() => handleCycleChange(0)} />
+          <Colordiv Bg='red' func={() => handleCycleChange(1)} />
+          <Colordiv Bg='blue' func={() => handleCycleChange(2)} />
+          <Colordiv Bg='gray' func={() => handleCycleChange(3)} />
+          <Colordiv Bg='skyblue' func={() => handleCycleChange(4)} />
         </ButtonContainer>
+
+        <Nike />
       </Container>
     </>
   );
