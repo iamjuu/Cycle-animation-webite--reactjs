@@ -5,7 +5,9 @@ export const Container = styled.div`
   top: 150px;
   color: white;
   width: 900px;
-  height: 600px;
+  height: 550px;
+  /* cursor:; */
+  /* background-color: red; */
   border-radius: 20px;
   opacity: 90%;
   img {

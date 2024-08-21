@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, ButtonContainer, StyledButton } from '../Cycle/CycleStyle';
-import Leftimage from '../../Images/left.png';
-import Righttbtn from '../../Images/right.png';
+// import Leftimage from '../../Images/left.png';
+// import Righttbtn from '../../Images/right.png';
 import CycleImg1 from '../../Images/cycle body(1).png';
 import CycleImg2 from '../../Images/cycle body(2).png';
 import CycleImg3 from '../../Images/cycle body(3).png';
@@ -27,12 +27,14 @@ const Cycle = () => {
   const [animate, setAnimate] = useState(false);
 
   const handleCycleChange = (index) => {
+    console.log(index,'ind');
+    
     setCurrentIndex(index);
     setAnimate(true)
     setTimeout(()=>{
       setAnimate(false)
     },1000)
-  };
+    };
 
   const currentCycle = cycleData[currentIndex];
 
@@ -43,18 +45,15 @@ const Cycle = () => {
           <img className='Cycleback' src={BackTyre} alt='cycleback tyre' />
           <img className='Cyclefront' src={FrontTyre} alt='cycle front' />
         </div>
-        <img className='CycleMain' src={currentCycle.image} alt="Cycle" />
+           <img className='CycleMain' src={currentCycle.image} alt="Cycle" />
 
         <ButtonContainer>
-         
-
-          <Colordiv Bg='green' func={() => handleCycleChange(0)} />
-          <Colordiv Bg='red' func={() => handleCycleChange(1)} />
-          <Colordiv Bg='blue' func={() => handleCycleChange(2)} />
-          <Colordiv Bg='gray' func={() => handleCycleChange(3)} />
-          <Colordiv Bg='skyblue' func={() => handleCycleChange(4)} />
+          <Colordiv Bg='green'  func={() => handleCycleChange(0)} />
+          <Colordiv Bg='red'    func={() => handleCycleChange(1)} />
+          <Colordiv Bg='blue'   func={() => handleCycleChange(2)} />
+          <Colordiv Bg='gray'   func={() => handleCycleChange(3)} />
+          <Colordiv Bg='skyblue'func={() => handleCycleChange(4)} />
         </ButtonContainer>
-
         <Nike />
       </Container>
     </>
