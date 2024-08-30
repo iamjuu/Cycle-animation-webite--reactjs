@@ -7,13 +7,13 @@ const ProductCard = () => {
 
     <Card>
         <Pic></Pic>
-       {/* <Details> 
+       <Details> 
 <p> a bike and in the  cycle dssf ijfeweijjh</p>
 <div className='reviews'>
 <p> ⭐⭐⭐⭐⭐</p>
         <ButtonComponent/>
 </div>
-       </Details> */}
+       </Details>
     </Card>
   );
 }
