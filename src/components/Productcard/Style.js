@@ -8,7 +8,7 @@ align-items: center;
 width: 410px;
 height: 480px;
 position: relative;
-background-color:black ;
+background-color:#455A64 ;
 
 `
 
@@ -18,23 +18,26 @@ position: relative;
 top: 5px;
 border-radius: 20px;
 height: 350px;
-background-color: red;
+background-color:transparent;
 transition: transform 0.5s ease 0.2s; /* Smooth transition with delay */
 &:hover {
     transform: translate(30px,-15px); /* Moves the component 30px to the right on hover */
   }
-
+img{
+    
+    width: 300px;
+}
 `
 export const Details = styled.div`
 top: 10px;
+/* background-color: red; */
 right: 130px;
 p{
     color: white;
 }
 .reviews{
     position: relative;
-top: 30px;
-gap: 70px;
+    gap: 70px;
     display: flex;
 }
 
