@@ -4,7 +4,6 @@ border-radius: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
-/* justify-content: center; */
 width: 410px;
 height: 480px;
 position: relative;
@@ -13,20 +12,29 @@ background-color:#455A64 ;
 `
 
 export const Pic = styled.div`
-width: 420px;
-position: relative;
-top: 5px;
-border-radius: 20px;
-height: 350px;
-background-color:transparent;
-transition: transform 0.5s ease 0.2s; /* Smooth transition with delay */
-&:hover {
-    transform: translate(30px,-15px); /* Moves the component 30px to the right on hover */
-  }
-img{
-    
+ width: 420px;
+  position: relative;
+  top: -50px;
+  left: -50px;
+  border-radius: 20px;
+  height: 350px;
+  background-color: transparent;
+  transition: transform 0.5s ease-out 0.2s; 
+  /* transform: translate(650px, 100px);  */
+  animation: pic 2s ease-in;
+  img{
     width: 300px;
 }
+  @keyframes pic {
+    0% {
+        transform: translate(850px, 10px);
+    }
+    100% {
+        
+    
+    
+  }
+
 `
 export const Details = styled.div`
 top: 10px;
